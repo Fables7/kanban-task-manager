@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 235, 16%, 15%;
+    --background: 220, 69%, 97%;
     --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
@@ -63,6 +63,13 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+  }
+
+  h1 {
+    @apply text-[1.5rem] font-bold;
+  }
+  h2 {
+    @apply text-[1.125rem] font-bold;
   }
 }
 
