@@ -18,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={plusJakartaSans.className}>
-        <NavBar />
-        <main>{children}</main>
+        <div>
+          <NavBar />
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );
