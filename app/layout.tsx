@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import NavBar from "./NavBar";
+import SidebarContextProvider from "@/context/sidebar-context";
+import SideBar from "./SideBar";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
@@ -18,10 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={plusJakartaSans.className}>
-        <div>
-          <NavBar />
-          <main>{children}</main>
-        </div>
+        <SidebarContextProvider>
+          <div className="flex h-screen  overflow-hidden">
+            <SideBar />
+            <div className="flex flex-col w-full h-full overflow-hidden ">
+              <NavBar />
+              <main>{children}</main>
+            </div>
+          </div>
+        </SidebarContextProvider>
       </body>
     </html>
   );
